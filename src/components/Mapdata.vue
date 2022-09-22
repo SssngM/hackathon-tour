@@ -1,21 +1,18 @@
 <template>
-    <div>
-
-    mapdata
-
-    </div>
+  <div>mapdata</div>
 </template>
 <script>
-//import Vue from 'vue'
-import axios from 'axios'
-//import VueAxios from 'vue-axios'
-//Vue.use(VueAxios.axios)
+import axios from "axios";
 export default {
-    name: "MapdataAPI",
-    mounted () {
-        axios
-          .get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=most%20popular&key=AIzaSyCxlArId4GuF6iiD52Mu1II4zYJWmOXAX8&lang=en&location=40.7831,-73.9712&type=tourist_attraction', {headers:{'Access-Control-Allow-Origin': true}})
-          .then(response => (console.warn(response)/*this.info = response)*/))
-      }
+  name: "MapdataAPI",
+  mounted() {
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=meow&key=AIzaSyCxlArId4GuF6iiD52Mu1II4zYJWmOXAX8&lang=en&type=tourist_attraction"
+      )
+      .then((response) => {
+        console.log(response);
+      });
+  },
 };
 </script>
