@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { bookdata } from "../BookApi";
+
 export default {
   name: "bookCard",
   props: {
@@ -44,6 +46,12 @@ export default {
       return text.length > 100 ? text.substring(0, 100) + "..." : text;
     },
   },
+  mounted() {
+    bookdata().then(r => { console.log(r) })
+      .catch(e => {
+      console.log(e);
+});
+  }
 };
 </script>
 
