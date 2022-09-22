@@ -1,18 +1,27 @@
 
 <template>
-<h1> Take you to HIT place</h1>
+  <div id="app">
+    <h1> Take you to HIT place</h1>
+    <Mapdata />
+  </div>
 </template>
 
 
 
 <script>
+
+import Mapdata from './components/Mapdata';
+
 export default {
   name: 'App',
   components: {
-
+    Mapdata
   }
-}
+};
 </script>
+
+
+
 
 <style>
 #app {
