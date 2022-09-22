@@ -11,7 +11,7 @@
           {{ truncateText(description) }}
         </p>
         <div class="card__btns">
-          <button class="card__btn">Read More</button>
+          <button class="card__btn"><a href="#/detail">Read More</a></button>
         </div>
       </div>
     </div>
@@ -20,6 +20,8 @@
 
 <script>
 import { bookdata } from "../BookApi";
+
+
 
 export default {
   name: "bookCard",

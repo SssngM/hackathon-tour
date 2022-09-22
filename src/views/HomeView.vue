@@ -29,8 +29,9 @@
 import homeBanner from "@/components/banner.vue";
 import Card from "../components/card.vue";
 
+
 export default {
-  name: "HomeView",
+  name: "HomeView", 
   components: {
     homeBanner,
     Card,
