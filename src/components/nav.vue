@@ -1,7 +1,5 @@
 <template>
-  <div class="nav">
-    <div class="nav__appName">book finder</div>
-  </div>
+  <div class="nav"></div>
 </template>
 
 <script>
@@ -10,9 +8,4 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.nav {
-}
-.nav__appName {
-}
-</style>
+<style lang="scss" scoped></style>
