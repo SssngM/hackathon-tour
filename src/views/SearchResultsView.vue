@@ -43,7 +43,7 @@ export default {
   methods: {
     async getSearchResults(keyword) {
       try {
-        const response = await fetchBooksByQuery(keyword, "&orderBy=newest");
+        const response = await fetchBooksByQuery(keyword, "&printType=books");
         if (response.items) {
           this.books = response.items;
         }
