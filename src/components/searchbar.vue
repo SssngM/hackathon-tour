@@ -11,8 +11,6 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss" scoped>
 @import "@/styles/_variables";
 
@@ -26,6 +24,7 @@ export default {
     background: none;
     border: none;
     flex: 1;
+    margin: 0 0.5rem 0 0.5rem;
   }
 
   &__btn {

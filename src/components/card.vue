@@ -10,9 +10,9 @@
         <p class="card__description">
           {{ truncateText(description) }}
         </p>
-        <div class="card__btns">
-          <router-link :to="linkToDetail">Read More</router-link>
-        </div>
+      </div>
+      <div class="card__btn">
+        <router-link :to="linkToDetail">Read More</router-link>
       </div>
     </div>
   </div>
@@ -60,7 +60,6 @@ export default {
     max-width: 150px;
     max-height: 300px;
     position: absolute;
-    // bottom: 10%;
     left: 5%;
     img {
       border-radius: 0.5rem;
@@ -76,8 +75,12 @@ export default {
     padding: 1rem;
     margin-top: 1rem;
     max-width: 370px;
+    height: 320px;
     text-align: right;
     padding-left: 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__content {
@@ -85,7 +88,7 @@ export default {
   }
 
   &__title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
@@ -99,7 +102,10 @@ export default {
   &__description {
     font-size: 0.8rem;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+  }
+
+  &__btn {
+    margin-right: 1rem;
   }
 }
 </style>
