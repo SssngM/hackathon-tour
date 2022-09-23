@@ -23,12 +23,32 @@
  3. Call the google book api with all information
  4. Click the detail page to route
  
+ <br>
+ <br>
+ <br>
  Image shots 
- 
+ <br>
+ <br>
 (fimga wireframe - main/detail)
  
+
+<img width="570" alt="Screen Shot 2022-09-22 at 10 24 20 PM" src="https://user-images.githubusercontent.com/71366662/191896961-5c22964c-f79f-4647-9f72-ec422a131c7a.png">
+
+
+(local host server - main page)
+
+<img width="570" alt="Screen Shot 2022-09-22 at 9 55 07 PM" src="https://user-images.githubusercontent.com/71366662/191896802-535f94b5-93f4-44aa-a5f6-0aac3ba4ccef.png">
+
+(local host server - detail page)
+
+<img width="570" alt="Screen Shot 2022-09-22 at 9 58 28 PM" src="https://user-images.githubusercontent.com/71366662/191896844-f96f8857-94a7-4109-b734-fcf6fb190fea.png">
+
+
+
+
+
  
-(local host server - main/detail)
+
  
  
  
