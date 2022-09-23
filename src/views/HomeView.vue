@@ -6,7 +6,7 @@
       <Card
         v-for="book in this.books"
         :title="book.volumeInfo.title"
-        :author="book.volumeInfo.authors ? 'unknown' : book.volumeInfo.authors"
+        :author="book.volumeInfo.authors.join(', ')"
         :description="book.volumeInfo.description"
         :imgSrc="book.volumeInfo.imageLinks.thumbnail"
         :linkToDetail="`/${book.id}/detail`"
@@ -40,7 +40,6 @@ export default {
       try {
         const response = await fetchBooksByQuery("''", "&orderBy=newest");
         this.books = response.items;
-        console.log(response.items);
       } catch (err) {
         console.log(err);
       }

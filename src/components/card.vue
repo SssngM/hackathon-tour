@@ -75,7 +75,7 @@ export default {
     padding: 1rem;
     margin-top: 1rem;
     max-width: 370px;
-    height: 320px;
+    height: 350px;
     text-align: right;
     padding-left: 9rem;
     display: flex;
