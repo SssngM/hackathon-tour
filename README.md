@@ -25,7 +25,7 @@
  
  Image shots 
  
- <fimga wireframe>
+(fimga wireframe)
  
  
  <local server server>
