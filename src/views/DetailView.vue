@@ -36,6 +36,7 @@ export default {
       const volumeId = this.$route.params.id;
       try {
         const response = await fetchBookById(volumeId);
+        console.log(response);
         const volumeInfo = response.volumeInfo;
         const saleInfo = response.saleInfo;
         this.book_info = volumeInfo;

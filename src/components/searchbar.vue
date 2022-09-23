@@ -1,13 +1,28 @@
 <template>
   <div class="searchbar">
-    <input type="text" name="bookTitleKeyword" class="searchbar__textInput" />
-    <button class="searchbar__btn" type="submit">search</button>
+    <input
+      v-model="keyword"
+      type="text"
+      name="bookTitleKeyword"
+      class="searchbar__textInput"
+    />
+    <router-link
+      :class="{ 'searchbar__btn--disabled': keyword.length === 0 }"
+      class="searchbar__btn"
+      :to="`/search?keyword=${keyword}`"
+      >search</router-link
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: "appSearchBar",
+  data: () => {
+    return {
+      keyword: "",
+    };
+  },
 };
 </script>
 
@@ -35,6 +50,13 @@ export default {
     background-color: $color-primary;
     color: white;
     padding: 0.5rem;
+    text-decoration: none;
+    font-weight: 400;
+
+    &--disabled {
+      pointer-events: none;
+      background-color: gray;
+    }
   }
 }
 </style>
