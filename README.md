@@ -28,7 +28,7 @@
 (fimga wireframe - main/detail)
  
  
-(local server server - main/detail)
+(local host server - main/detail)
  
  
  
