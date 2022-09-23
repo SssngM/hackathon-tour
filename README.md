@@ -5,30 +5,34 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-# hackathon-project
+# hackathon-project : Lib-Base (Libaray Database)
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+ <h3> Team Member:  Uy.Seng / Ross Rosales / Seung Yoo </h3>
+ 
+ What it does : Lib-Base main feature is to search books and show its details. 
+ 
+ 1. Show recent books on main page
+ 2. Search your book.
+ 3. See the all detail.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+ How we built it
+ 
+ 1. Made the wireframe with Figma
+ 2. Built the main page to search the book
+ 3. Call the google book api with all information
+ 4. Click the detail page to route
+ 
+ Image shots 
+ 
+ <fimga wireframe>
+ 
+ 
+ <local server server>
+ 
+ 
+ 
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
