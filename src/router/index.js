@@ -4,20 +4,20 @@ import DetailView from '../components/detail.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/detail',
-    name: 'detail',
-    component: DetailView
-  }
-]
+    path: "/:id/detail",
+    name: "detail",
+    component: DetailView,
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

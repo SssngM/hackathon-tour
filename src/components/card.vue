@@ -11,7 +11,7 @@
           {{ truncateText(description) }}
         </p>
         <div class="card__btns">
-          <button class="card__btn"><a href="#/detail">Read More</a></button>
+          <router-link :to="linkToDetail">Read More</router-link>
         </div>
       </div>
     </div>
@@ -19,10 +19,6 @@
 </template>
 
 <script>
-import { bookdata } from "../BookApi";
-
-
-
 export default {
   name: "bookCard",
   props: {
@@ -42,18 +38,16 @@ export default {
       type: String,
       required: true,
     },
+    linkToDetail: {
+      type: String,
+      required: false,
+    },
   },
   methods: {
     truncateText(text) {
       return text.length > 100 ? text.substring(0, 100) + "..." : text;
     },
   },
-  mounted() {
-    bookdata().then(r => { console.log(r) })
-      .catch(e => {
-      console.log(e);
-});
-  }
 };
 </script>
 
@@ -66,8 +60,8 @@ export default {
     max-width: 150px;
     max-height: 300px;
     position: absolute;
-    bottom: 10%;
-    left: -25px;
+    // bottom: 10%;
+    left: 5%;
     img {
       border-radius: 0.5rem;
       width: 100%;

@@ -1,24 +1,14 @@
 <template>
   <div class="home">
     <homeBanner></homeBanner>
-    <div v-for="row in [1, 2, 3]" class="row">
+    <div class="home__container">
       <Card
-        imgSrc="https://images-na.ssl-images-amazon.com/images/I/91ocU8970hL.jpg"
-        title="The Alchemist"
-        author="Paulo Coelho"
-        description="The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. Influenced by mysticism, mythology, and eastern philosophy, the story features a treasure hunt, reincarnation, and philosophical allegories. The Alchemist has been translated into 80 languages and sold more than 65 million copies worldwide, and has been on The New York Times Best Seller list for more than 250 weeks."
-      ></Card>
-      <Card
-        imgSrc="https://images-na.ssl-images-amazon.com/images/I/91ocU8970hL.jpg"
-        title="The Alchemist"
-        author="Paulo Coelho"
-        description="The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. Influenced by mysticism, mythology, and eastern philosophy, the story features a treasure hunt, reincarnation, and philosophical allegories. The Alchemist has been translated into 80 languages and sold more than 65 million copies worldwide, and has been on The New York Times Best Seller list for more than 250 weeks."
-      ></Card>
-      <Card
-        imgSrc="https://images-na.ssl-images-amazon.com/images/I/91ocU8970hL.jpg"
-        title="The Alchemist"
-        author="Paulo Coelho"
-        description="The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. Influenced by mysticism, mythology, and eastern philosophy, the story features a treasure hunt, reincarnation, and philosophical allegories. The Alchemist has been translated into 80 languages and sold more than 65 million copies worldwide, and has been on The New York Times Best Seller list for more than 250 weeks."
+        v-for="book in this.books"
+        :title="book.volumeInfo.title"
+        :author="book.volumeInfo.authors ? 'unknown' : book.volumeInfo.authors"
+        :description="book.volumeInfo.description" 
+        :imgSrc="book.volumeInfo.imageLinks.thumbnail"
+        :linkToDetail="`/${book.id}/detail`"
       ></Card>
     </div>
   </div>
@@ -28,20 +18,41 @@
 // @ is an alias to /src
 import homeBanner from "@/components/banner.vue";
 import Card from "../components/card.vue";
-
+import { fetchBooksByQuery } from "../BookApi";
 
 export default {
-  name: "HomeView", 
+  name: "HomeView",
+  data: () => ({
+    books: [],
+    loading: true,
+    error: null,
+  }),
   components: {
     homeBanner,
     Card,
+  },
+  created() {
+    this.getPopularBooks();
+  },
+  methods: {
+    async getPopularBooks() {
+      try {
+        const response = await fetchBooksByQuery("''", "&orderBy=newest");
+        this.books = response.items;
+        console.log(response.items);
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.row {
-  display: flex;
-  justify-content: space-evenly;
+.home {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>
