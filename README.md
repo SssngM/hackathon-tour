@@ -25,10 +25,10 @@
  
  Image shots 
  
-(fimga wireframe)
+(fimga wireframe - main/detail)
  
  
- <local server server>
+(local server server - main/detail)
  
  
  
