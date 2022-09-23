@@ -29,8 +29,8 @@ export default {
     error: null,
   }),
   components: {
-    homeBanner,
     Card,
+    homeBanner,
   },
   created() {
     this.getPopularBooks();
